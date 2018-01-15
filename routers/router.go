@@ -17,6 +17,8 @@ import (
 	"apidemo/session"
 	"apidemo/utils"
 	"apidemo/cache"
+	"github.com/astaxie/beego/orm"
+	"apidemo/models"
 )
 
 type ImageHandler struct {
@@ -34,10 +36,58 @@ func (image *ImageHandler) ServeHTTP(res http.ResponseWriter, req *http.Request)
 	utils.Debug(sess.SessionID())
 
 	//cache
-
 	cache.CacheClient.Put("username","sun_hongtao",0)
-
 	utils.Debug(cache.CacheClient.Get("username"))
+
+	//orm
+
+	//insert
+	//l:=models.Nblog{Id:1,Data:"hello"}
+	//o:=orm.NewOrm()
+	//index,e:=o.Insert(&l)
+	//if e!=nil {
+	//	panic(e)
+	//}
+	//utils.Debug(index)
+
+   //read
+	o:=orm.NewOrm()/**/
+	//s:=models.Nblog{}
+	//s.Id=2
+	//o.Read(&s)
+	//utils.Debug(s)
+
+
+	//c,_,_:=o.ReadOrCreate(&s,"Data")
+	//utils.Debug(c)
+
+
+	//s.Data="sunhongtao"
+	//o.Update(&s)
+
+
+	//o.Delete(&s)
+
+	//qs:=o.QueryTable(&s)
+	//qs.Filter("id",1)
+	//utils.Debug(s)
+
+
+	//o.Raw("select * from n_blog where id=?",1).QueryRow(&s)
+	//utils.Debug(s)
+
+
+	//RowsToStruct
+	s:=new(models.Nblog)
+	i,_:=o.Raw("select id,data from n_blog ").RowsToStruct(s,"id","data")
+	utils.Debug(s.Data)
+	utils.Debug(i)
+
+
+	//Prepare
+	//p,_:=o.Raw("update n_blog set data=? where id = ?").Prepare()
+	//p.Exec("sunhongtao",2)
+
 }
 
 

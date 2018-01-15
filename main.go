@@ -3,9 +3,16 @@ package main
 import (
 	_ "apidemo/routers"
 
+	_"apidemo/models"
 	"github.com/astaxie/beego"
-	"apidemo/utils"
+	"github.com/astaxie/beego/orm"
+	_ "github.com/go-sql-driver/mysql"
 )
+
+func init()  {
+	orm.RegisterDriver("mysql",orm.DRMySQL)
+	orm.RegisterDataBase("default","mysql","root:123456@/world?charset=utf8")
+}
 
 func main() {
 	if beego.BConfig.RunMode == "dev" {
@@ -13,6 +20,6 @@ func main() {
 		beego.BConfig.WebConfig.StaticDir["/swagger"] = "swagger"
 	}
 
-	utils.Debug(beego.AppConfig.String("tag"))
+	//utils.Debug(beego.AppConfig.String("tag"))
 	beego.Run()
 }
