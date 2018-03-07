@@ -7,7 +7,7 @@ import (
 
 func init() {
 
-	beego.GlobalControllerRouter["apidemo/controllers:ApiController"] = append(beego.GlobalControllerRouter["apidemo/controllers:ApiController"],
+	beego.GlobalControllerRouter["github.com/sunjiangjun/apidemo/controllers:ApiController"] = append(beego.GlobalControllerRouter["github.com/sunjiangjun/apidemo/controllers:ApiController"],
 		beego.ControllerComments{
 			Method: "name",
 			Router: `/v1/api/`,
@@ -15,7 +15,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["apidemo/controllers:ObjectController"] = append(beego.GlobalControllerRouter["apidemo/controllers:ObjectController"],
+	beego.GlobalControllerRouter["github.com/sunjiangjun/apidemo/controllers:ObjectController"] = append(beego.GlobalControllerRouter["github.com/sunjiangjun/apidemo/controllers:ObjectController"],
 		beego.ControllerComments{
 			Method: "Post",
 			Router: `/`,
@@ -23,7 +23,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["apidemo/controllers:ObjectController"] = append(beego.GlobalControllerRouter["apidemo/controllers:ObjectController"],
+	beego.GlobalControllerRouter["github.com/sunjiangjun/apidemo/controllers:ObjectController"] = append(beego.GlobalControllerRouter["github.com/sunjiangjun/apidemo/controllers:ObjectController"],
 		beego.ControllerComments{
 			Method: "GetAll",
 			Router: `/`,
@@ -31,7 +31,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["apidemo/controllers:ObjectController"] = append(beego.GlobalControllerRouter["apidemo/controllers:ObjectController"],
+	beego.GlobalControllerRouter["github.com/sunjiangjun/apidemo/controllers:ObjectController"] = append(beego.GlobalControllerRouter["github.com/sunjiangjun/apidemo/controllers:ObjectController"],
 		beego.ControllerComments{
 			Method: "Get",
 			Router: `/:objectId`,
@@ -39,7 +39,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["apidemo/controllers:ObjectController"] = append(beego.GlobalControllerRouter["apidemo/controllers:ObjectController"],
+	beego.GlobalControllerRouter["github.com/sunjiangjun/apidemo/controllers:ObjectController"] = append(beego.GlobalControllerRouter["github.com/sunjiangjun/apidemo/controllers:ObjectController"],
 		beego.ControllerComments{
 			Method: "Put",
 			Router: `/:objectId`,
@@ -47,7 +47,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["apidemo/controllers:ObjectController"] = append(beego.GlobalControllerRouter["apidemo/controllers:ObjectController"],
+	beego.GlobalControllerRouter["github.com/sunjiangjun/apidemo/controllers:ObjectController"] = append(beego.GlobalControllerRouter["github.com/sunjiangjun/apidemo/controllers:ObjectController"],
 		beego.ControllerComments{
 			Method: "Delete",
 			Router: `/:objectId`,
@@ -55,7 +55,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["apidemo/controllers:UserController"] = append(beego.GlobalControllerRouter["apidemo/controllers:UserController"],
+	beego.GlobalControllerRouter["github.com/sunjiangjun/apidemo/controllers:UserController"] = append(beego.GlobalControllerRouter["github.com/sunjiangjun/apidemo/controllers:UserController"],
 		beego.ControllerComments{
 			Method: "Post",
 			Router: `/`,
@@ -63,7 +63,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["apidemo/controllers:UserController"] = append(beego.GlobalControllerRouter["apidemo/controllers:UserController"],
+	beego.GlobalControllerRouter["github.com/sunjiangjun/apidemo/controllers:UserController"] = append(beego.GlobalControllerRouter["github.com/sunjiangjun/apidemo/controllers:UserController"],
 		beego.ControllerComments{
 			Method: "GetAll",
 			Router: `/`,
@@ -71,7 +71,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["apidemo/controllers:UserController"] = append(beego.GlobalControllerRouter["apidemo/controllers:UserController"],
+	beego.GlobalControllerRouter["github.com/sunjiangjun/apidemo/controllers:UserController"] = append(beego.GlobalControllerRouter["github.com/sunjiangjun/apidemo/controllers:UserController"],
 		beego.ControllerComments{
 			Method: "Get",
 			Router: `/:uid`,
@@ -79,7 +79,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["apidemo/controllers:UserController"] = append(beego.GlobalControllerRouter["apidemo/controllers:UserController"],
+	beego.GlobalControllerRouter["github.com/sunjiangjun/apidemo/controllers:UserController"] = append(beego.GlobalControllerRouter["github.com/sunjiangjun/apidemo/controllers:UserController"],
 		beego.ControllerComments{
 			Method: "Put",
 			Router: `/:uid`,
@@ -87,7 +87,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["apidemo/controllers:UserController"] = append(beego.GlobalControllerRouter["apidemo/controllers:UserController"],
+	beego.GlobalControllerRouter["github.com/sunjiangjun/apidemo/controllers:UserController"] = append(beego.GlobalControllerRouter["github.com/sunjiangjun/apidemo/controllers:UserController"],
 		beego.ControllerComments{
 			Method: "Delete",
 			Router: `/:uid`,
@@ -95,7 +95,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["apidemo/controllers:UserController"] = append(beego.GlobalControllerRouter["apidemo/controllers:UserController"],
+	beego.GlobalControllerRouter["github.com/sunjiangjun/apidemo/controllers:UserController"] = append(beego.GlobalControllerRouter["github.com/sunjiangjun/apidemo/controllers:UserController"],
 		beego.ControllerComments{
 			Method: "Login",
 			Router: `/login`,
@@ -103,7 +103,7 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["apidemo/controllers:UserController"] = append(beego.GlobalControllerRouter["apidemo/controllers:UserController"],
+	beego.GlobalControllerRouter["github.com/sunjiangjun/apidemo/controllers:UserController"] = append(beego.GlobalControllerRouter["github.com/sunjiangjun/apidemo/controllers:UserController"],
 		beego.ControllerComments{
 			Method: "Logout",
 			Router: `/logout`,

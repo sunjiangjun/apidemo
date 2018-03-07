@@ -8,17 +8,17 @@
 package routers
 
 import (
-	"apidemo/controllers"
+	"github.com/sunjiangjun/apidemo/controllers"
 
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/context"
 
 	"net/http"
-	"apidemo/session"
-	"apidemo/utils"
-	"apidemo/cache"
+	"github.com/sunjiangjun/apidemo/session"
+	"github.com/sunjiangjun/apidemo/utils"
+	"github.com/sunjiangjun/apidemo/cache"
 	"github.com/astaxie/beego/orm"
-	"apidemo/models"
+	"github.com/sunjiangjun/apidemo/models"
 )
 
 type ImageHandler struct {
@@ -115,6 +115,7 @@ func init() {
 	beego.AddNamespace(ns)
 
 	beego.Router("/v1/api/message", &controllers.MessageController{},"*:Get")
+
 	beego.Get("/v1/api/data", func(context *context.Context) {
 		context.ResponseWriter.Write([]byte("hello.world"))
 	})

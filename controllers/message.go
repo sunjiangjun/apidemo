@@ -3,7 +3,7 @@ package controllers
 
 import (
 	"github.com/astaxie/beego"
-	"apidemo/models"
+	"github.com/sunjiangjun/apidemo/models"
 )
 
 type MessageController struct {

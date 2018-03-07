@@ -1,9 +1,9 @@
 package main
 
 import (
-	_ "apidemo/routers"
+	_ "github.com/sunjiangjun/apidemo/routers"
 
-	_"apidemo/models"
+	_ "github.com/sunjiangjun/apidemo/models"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
 	_ "github.com/go-sql-driver/mysql"

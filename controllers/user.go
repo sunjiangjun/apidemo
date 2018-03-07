@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	"apidemo/models"
+	"github.com/sunjiangjun/apidemo/models"
 	"encoding/json"
 
 	"github.com/astaxie/beego"
