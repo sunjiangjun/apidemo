@@ -28,7 +28,8 @@ type ImageHandler struct {
 func (image *ImageHandler) ServeHTTP(res http.ResponseWriter, req *http.Request)  {
 	sess,_:=session.GlobalSession.SessionStart(res,req)
 	defer sess.SessionRelease(res)
-	res.Write([]byte("welcome ...."))
+
+	var body string
 
 	//session
 	sess.Set("username","sunhongtao")
@@ -42,20 +43,26 @@ func (image *ImageHandler) ServeHTTP(res http.ResponseWriter, req *http.Request)
 	//orm
 
 	//insert
-	//l:=models.Nblog{Id:1,Data:"hello"}
-	//o:=orm.NewOrm()
-	//index,e:=o.Insert(&l)
+	o:=orm.NewOrm()
+	////l:=models.Nblog{Id:1,Data:"hello"}
+	//list:=[]models.Nblog{
+	//	{Data:"sunhongtao"},
+	//	{Data:"wangcong"},
+	//	{Data:"licong"},
+	//}
+	//index,e:=o.InsertMulti(2,list);
 	//if e!=nil {
 	//	panic(e)
 	//}
 	//utils.Debug(index)
 
    //read
-	o:=orm.NewOrm()/**/
+	//o:=orm.NewOrm()/**/
 	//s:=models.Nblog{}
 	//s.Id=2
 	//o.Read(&s)
 	//utils.Debug(s)
+	//body+=s.String()
 
 
 	//c,_,_:=o.ReadOrCreate(&s,"Data")
@@ -68,9 +75,27 @@ func (image *ImageHandler) ServeHTTP(res http.ResponseWriter, req *http.Request)
 
 	//o.Delete(&s)
 
-	//qs:=o.QueryTable(&s)
-	//qs.Filter("id",1)
-	//utils.Debug(s)
+	//qs:=o.QueryTable(models.Nblog{}).Filter("id",1)
+	//var us []models.Nblog
+	//qs.All(&us)
+	//utils.Debug(us)
+
+
+	//var n models.Nblog
+	//qs.One(&n)
+	//utils.Debug(n)
+
+
+	//var maps []orm.Params
+	//qs.Values(&maps)
+	//utils.Debug(maps)
+
+
+	rs:=o.Raw("select * from n_blog where id=1")
+	var n models.Nblog
+	rs.RowsToStruct(&n,"id","data")
+	utils.Debug(n)
+
 
 
 	//o.Raw("select * from n_blog where id=?",1).QueryRow(&s)
@@ -78,15 +103,18 @@ func (image *ImageHandler) ServeHTTP(res http.ResponseWriter, req *http.Request)
 
 
 	//RowsToStruct
-	s:=new(models.Nblog)
-	i,_:=o.Raw("select id,data from n_blog ").RowsToStruct(s,"id","data")
-	utils.Debug(s.Data)
-	utils.Debug(i)
+	//s:=new(models.Nblog)
+	//i,_:=o.Raw("select id,data from n_blog ").RowsToStruct(s,"id","data")
+	//utils.Debug(s.Data)
+	//utils.Debug(i)
 
 
 	//Prepare
 	//p,_:=o.Raw("update n_blog set data=? where id = ?").Prepare()
 	//p.Exec("sunhongtao",2)
+
+
+	res.Write([]byte(body))
 
 }
 

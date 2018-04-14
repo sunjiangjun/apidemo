@@ -21,5 +21,12 @@ func main() {
 	}
 
 	//utils.Debug(beego.AppConfig.String("tag"))
+
+
+	orm.Debug =true
+
+	//同步建表
+	orm.RunSyncdb("default",false,true)
+
 	beego.Run()
 }
